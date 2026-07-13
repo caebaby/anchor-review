@@ -7,7 +7,7 @@
   <title>Anchor Wealth Planning | One Living Plan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js')</script>
   <style>
     :root {
@@ -80,8 +80,8 @@
     .hero-slide { position:relative; flex:0 0 33.333333%; height:100%; overflow:hidden; }
     .hero-slide video,.hero-slide .hero-poster { width:100%; height:100%; object-fit:cover; }
     .hero-slide[data-market="energy"] video { object-position:center 55%; }
-    .hero-slide[data-market="business"] video { object-position:center 44%; }
-    .hero-slide[data-market="family"] video { object-position:center 48%; }
+    .hero-slide[data-market="business"] video { object-position:center 50%; }
+    .hero-slide[data-market="family"] video { object-position:center 50%; }
     .hero-slide::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(15,32,56,.97) 0%,rgba(15,32,56,.9) 36%,rgba(15,32,56,.48) 70%,rgba(15,32,56,.4) 100%),linear-gradient(0deg,rgba(15,32,56,.68) 0%,transparent 38%); }
     .hero-noise { pointer-events:none; position:absolute; inset:0; z-index:2; opacity:.1; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E"); mix-blend-mode:soft-light; }
     .hero-copy { position:absolute; z-index:5; left:50%; top:50%; width:var(--wrap); transform:translate(-50%,-42%); }
@@ -103,6 +103,7 @@
     .hero-control { width:46px; height:46px; display:grid; place-items:center; border:1px solid rgba(248,243,233,.4); border-radius:50%; color:var(--on-dark); background:rgba(15,32,56,.4); cursor:pointer; }
     .hero-control:hover { background:rgba(15,32,56,.76); }
     @keyframes heroProgress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+    @keyframes familySweep { from { object-position:18% 50%; } to { object-position:82% 50%; } }
 
     .signal-band { border-bottom:1px solid var(--line); background:var(--cream-mid); }
     .signal-inner { width:var(--wrap); min-height:78px; margin:auto; display:grid; grid-template-columns:1.1fr .8fr 1.3fr; align-items:center; }
@@ -280,6 +281,7 @@
       .mobile-menu a { padding:13px 8px; border-bottom:1px solid rgba(248,243,233,.12); color:var(--on-dark); font-size:.86rem; font-weight:650; text-decoration:none; }
       .mobile-menu a:last-child { border-bottom:0; color:#e0c77f; }
       .hero { min-height:790px; height:100svh; max-height:none; }
+      .hero-slide[data-market="family"] video { animation:familySweep 10s var(--ease) infinite alternate; }
       .hero-slide::after { background:linear-gradient(90deg,rgba(15,32,56,.95),rgba(15,32,56,.7)),linear-gradient(0deg,rgba(15,32,56,.88),transparent 58%); }
       .hero-copy { top:46%; transform:translate(-50%,-44%); }
       .hero h1 { font-size:clamp(3.45rem,16vw,5.2rem); line-height:.89; }
@@ -321,6 +323,7 @@
       *,*::before,*::after { animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important; }
       .hero-track { transform:none!important; }
       .hero-slide:not(:first-child) { visibility:hidden; }
+      .hero-slide[data-market="family"] video { animation:none; object-position:center 50%; }
       .plan-node { animation:none; }
     }
   </style>
@@ -423,11 +426,11 @@
             <div class="persona-body"><span class="persona-index">01 · Houston energy</span><h3>Oil &amp; Gas Executives</h3><p>RSUs, NQDC elections, blackout periods, and commodity-cycle exposure.</p><span class="persona-link">See how Anchor works with you →</span></div>
           </a>
           <a class="persona" href="#fit">
-            <img src="assets/hero-business-poster.png" alt="Business owner working calmly at his desk">
+            <img src="assets/hero-business-poster.png" alt="A mature business owner reviewing plans at a wide office desk">
             <div class="persona-body"><span class="persona-index">02 · Closely held</span><h3>Business Owners</h3><p>Exit readiness, entity structure, and the line between business value and personal wealth.</p><span class="persona-link">See how Anchor works with you →</span></div>
           </a>
           <a class="persona" href="#fit">
-            <img src="assets/hero-family-poster.png" alt="A smiling couple relaxing at home with their dog">
+            <img src="assets/hero-family-poster.png" alt="Grandparents, parents, and children sharing dinner together">
             <div class="persona-body"><span class="persona-index">03 · Across generations</span><h3>High-Net-Worth Families</h3><p>Trust funding, current beneficiaries, and a plan the next generation can understand.</p><span class="persona-link">See how Anchor works with you →</span></div>
           </a>
         </div>
